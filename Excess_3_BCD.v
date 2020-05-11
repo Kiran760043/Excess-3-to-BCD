@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Design Name: Binary  to Excess 3 converter
+// Design Name: Excess 3 to BCD converter
 // Engineer: kiran
 // Refence : Digital Design 5th Edition by Morrios Mano & MIcheal Ciletti (by constructing Truth Table)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -11,7 +11,7 @@ module Excess_3_BCD(in,out);
     input  wire [3:0] in;
     output reg  [3:0] out; // change the output data type to reg to use case statements
                            // change the output data type to wire to use assign statements
-    
+
     always@(*)
         begin
             case(in)
@@ -27,11 +27,11 @@ module Excess_3_BCD(in,out);
                 4'hC : out <= 4'h9;
                 default : out <= 4'h0;
             endcase
-        end  
+        end
 
 //    assign out[0] = ~in[0];
 //    assign out[1] = in[0] ^ in[1];
-//    assign out[2] = ~(in[2] ^ (in[1] & in[0]) ); 
+//    assign out[2] = ~(in[2] ^ (in[1] & in[0]) );
 //    assign out[3] = in[3] & (in[2] | (in[1] & in[0]));
-           
+
 endmodule
